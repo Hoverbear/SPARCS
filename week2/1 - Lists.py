@@ -10,6 +10,20 @@ my_list_with_things_in_it = ["Something", 100, "Something else"]
 # You can print a list.
 print(my_list) # Shows us [], since it's an empty list.
 
+# You can access specific items in a list by addressing them with [number]
+# Note how it starts at 0!
+my_list = ["Zero Index", "First Index", "Second Index"]
+print(my_list[0]) # Zero Index
+print(my_list[2]) # Second Index
+my_list[0] = "Totally something else"
+print(my_list) # ["Totally something else", "First Index", "Second Index"]
+
+# Wnat to know if something is in a list?
+my_list = [1,2,3]
+1 in my_list # True!
+if 2 in my_list:
+	print("2 is in my list!")
+
 # You can add things to a list.
 my_list.append("Something")
 print(my_list) # Shows us ["Something"]
