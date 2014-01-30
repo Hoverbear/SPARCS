@@ -50,14 +50,14 @@ def setup_board(b):
     return b
 
 def move(i, f, b):
-    init = (ord(i[0])-97,int(i[1]))
-    fin = (ord(f[0])-97,int(f[1]))
+    init = (ord(i[0])-97,int(i[1])-1)
+    fin = (ord(f[0])-97,int(f[1])-1)
 
     print(init)
     print(fin)
-    sym = b[init[0]][init[1]] 
-    b[init[0]][init[1]] = '_'
-    b[fin[0]][fin[1]] = sym
+    sym = b[init[1]][init[0]] 
+    b[init[1]][init[0]] = '_'
+    b[fin[1]][fin[0]] = sym
 
     return b
 
@@ -66,6 +66,7 @@ def main():
     board = setup_board(board)
     draw(board)
     while(True):
+        draw(board)
         print("Enter the location of the piece to move ('a8' or 'b7')")
         resp1 = input(">>> ")
         print("Enter the location to move the piece ('a7' or 'b5'")
