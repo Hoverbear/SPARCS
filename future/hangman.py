@@ -4,7 +4,7 @@ import random
 
 def draw(x):
     s = ("There are "+str(x)+" body parts left.")
-    if x == 6:
+    if x == 0:
         print (
         "   /------\\\n"
         "  |        |\n"
@@ -18,7 +18,7 @@ def draw(x):
         "           |\n"
         "  ------------"
         )
-    elif x == 5:
+    elif x == 1:
         print (
         "   /------\\\n"
         "  |        |\n"
@@ -32,7 +32,7 @@ def draw(x):
         "           |\n"
         "  ------------"
         )
-    elif x == 4:
+    elif x == 2:
         print (
         "   /------\\\n"
         "  |        |\n"
@@ -60,7 +60,7 @@ def draw(x):
         "           |\n"
         "  ------------"
         )
-    elif x == 2:
+    elif x == 4:
         print (
         "   /------\\\n"
         "  |        |\n"
@@ -74,7 +74,7 @@ def draw(x):
         "           |\n"
         "  ------------"
         )
-    elif x == 1:
+    elif x == 5:
         print (
         "   /------\\\n"
         "  |        |\n"
@@ -88,7 +88,7 @@ def draw(x):
         "           |\n"
         "  ------------"
         )
-    elif x == 0:
+    elif x == 6:
         print (
         "   /------\\\n"
         "  |        |\n"
