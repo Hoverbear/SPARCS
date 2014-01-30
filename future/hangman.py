@@ -4,7 +4,7 @@ import random
 
 def draw(x):
     s = ("There are "+str(x)+" body parts left.")
-    if x == 6:
+    if x == 0:
         print (
         "   /------\\\n"
         "  |        |\n"
@@ -18,7 +18,7 @@ def draw(x):
         "           |\n"
         "  ------------"
         )
-    elif x == 5:
+    elif x == 1:
         print (
         "   /------\\\n"
         "  |        |\n"
@@ -32,7 +32,7 @@ def draw(x):
         "           |\n"
         "  ------------"
         )
-    elif x == 4:
+    elif x == 2:
         print (
         "   /------\\\n"
         "  |        |\n"
@@ -60,7 +60,7 @@ def draw(x):
         "           |\n"
         "  ------------"
         )
-    elif x == 2:
+    elif x == 4:
         print (
         "   /------\\\n"
         "  |        |\n"
@@ -74,7 +74,7 @@ def draw(x):
         "           |\n"
         "  ------------"
         )
-    elif x == 1:
+    elif x == 5:
         print (
         "   /------\\\n"
         "  |        |\n"
@@ -88,7 +88,7 @@ def draw(x):
         "           |\n"
         "  ------------"
         )
-    elif x == 0:
+    elif x == 6:
         print (
         "   /------\\\n"
         "  |        |\n"
@@ -106,8 +106,7 @@ def draw(x):
 
     
 def get_random_word(words):
-    return "abc"
-    #return words[random.randint(0, len(words))]
+    return words[random.randint(0, len(words))]
     
 
 def check_guess(word, working, char):
@@ -128,6 +127,10 @@ def play(words):
         print((draw(num_parts)))
         if(num_parts == 0):
             print("YOU loose!")
+            print("THE WORD WAS: "+word)
+            print("MUHAHAHA")
+            print("----------")
+            break
         print("------------")
         print("Current word is:")
         print(working_word)
@@ -142,6 +145,10 @@ def play(words):
             working_word = check_guess(word, working_word, i)
             if working_word == saved:
                 num_parts -= 1
+            elif "_" not in working_word:
+                print("YOU WIN")
+                print("WINK")
+                break
             
         elif i=='h' or i=="H":
             print(guessed)
