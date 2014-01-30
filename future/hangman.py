@@ -106,24 +106,28 @@ def draw(x):
 
     
 def get_random_word(words):
-    return words[random.randint(0, len(words))]
+    return "abc"
+    #return words[random.randint(0, len(words))]
     
 
 def check_guess(word, working, char):
+    r = list(working)
     for i in range(len(word)):
         if char == word[i]:
-            list(working)[i] = char
-    return ''.join(working)
+            r[i] = char
+    return ''.join(r) 
 
 def play(words):
 
     num_parts = 6 #man starts with 6 body parts
     word = get_random_word(words)
-    working_word = " _ "*len(word)
+    working_word = "_"*len(word)
     guessed = list() 
 
     while(True):
         print((draw(num_parts)))
+        print("------------")
+        print("Current word is:")
         print(working_word)
         print('------------')
         print("g -> guess a letter, h -> view previsouly guessed letters")
@@ -132,7 +136,11 @@ def play(words):
             i = input("Enter your guess (lowercase): ")
             print('your guess was: '+str(i))
             guessed.append(str(i))
+            saved = working_word
             working_word = check_guess(word, working_word, i)
+            if working_word == saved:
+                num_parts -= 1
+            
         elif i=='h' or i=="H":
             print(guessed)
         else: 
