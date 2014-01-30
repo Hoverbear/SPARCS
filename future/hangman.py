@@ -11,7 +11,14 @@ def get_random_word(words):
     return words[random.randint(0, len(words))]
     
 
+def check_guess(word, working, char):
+    for i in range(len(word)):
+        if char == word[i]:
+            list(working)[i] = char
+    return ''.join(working)
+
 def play(words):
+
     num_parts = 6 #man starts with 6 body parts
     word = get_random_word(words)
     working_word = " _ "*len(word)
@@ -27,7 +34,7 @@ def play(words):
             i = input("Enter your guess (lowercase): ")
             print('your guess was: '+str(i))
             guessed.append(str(i))
-            check_guess(word, 
+            working_word = check_guess(word, working_word, i)
         elif i=='h' or i=="H":
             print(guessed)
         else: 
