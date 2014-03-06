@@ -33,4 +33,5 @@ my_board = [
     ["wr", "wk", "wb", "wq", "wk", "wb", "wk", "wr"]
 ]
 
-draw_board(my_board)
+print(my_board)
+# draw_board(my_board)
