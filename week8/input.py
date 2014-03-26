@@ -1,8 +1,10 @@
 name = input("What is your name?: ")
-tall = input("Are you tall? (yes/no): ")
-age  = int(input("What is your age?: ")) # Remember to convert toa  number!
 
-if name == "Andrew" and tall == "yes" and age == 23:
+
+if name == "Andrew":
   print("Okay, you're Andrew.")
-else
-  print("Are you sure you're not Simon?")
+elif:
+  print("Are you Simon?")
+
+# Can you make this program verify that your parent is who they say they are?
+# For example, ask their height, or age, or favourite colour!
